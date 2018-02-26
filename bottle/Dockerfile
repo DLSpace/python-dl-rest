@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-LABEL author="sreedhar potturi <sreedhar.potturi@gmail.com>" io.openshift.s2i.scripts-url="image:///s2i/bin/"
+LABEL author="sreedhar potturi <sreedhar.potturi@gmail.com>" io.openshift.s2i.scripts-url="image:///s2i/bin"
 
 RUN apk --update  --repository http://dl-4.alpinelinux.org/alpine/edge/community add \
     bash \

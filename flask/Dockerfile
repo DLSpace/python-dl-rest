@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-LABEL author="sreedhar potturi <sreedhar.potturi@gmail.com>" io.openshift.s2i.scripts-url="image:///s2i/bin/"
+LABEL author="sreedhar potturi <sreedhar.potturi@gmail.com>" io.openshift.s2i.scripts-url="image:///s2i/bin"
 
 RUN apt-get -q update
 RUN apt-get -y install \
