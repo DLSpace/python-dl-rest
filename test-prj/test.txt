@@ -1,0 +1,5 @@
+C:\tools\s2i-1.1.8\s2i build --destination /tmp  --copy . dlspace/keras-theano-bottle:latest test-app2
+docker build .\bottle\ -t dlspace/keras-theano-bottle
+
+
+C:\tools\s2i-1.1.8\s2i build --destination /tmp  --copy . dlspace/keras-theano-flask:latest test-app

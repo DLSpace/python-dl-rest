@@ -1,0 +1,3 @@
+REQUIREMENTS=/tmp/src/requirments.txt
+FLASK_APP=/tmp/src/testApp.py
+BOTTLE_APP=/tmp/src/testApp2.py
