@@ -1,0 +1,7 @@
+#!/bin/bash
+pwd
+cd /tmp
+ls -l
+ls -l /tmp/src
+ls -l /tmp/scripts
+pip install -r $REQUIREMENTS

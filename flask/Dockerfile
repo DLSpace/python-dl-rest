@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-MAINTAINER sreedhar potturi <sreedhar.potturi@gmail.com>
+LABEL author="sreedhar potturi <sreedhar.potturi@gmail.com>" io.openshift.s2i.scripts-url="image:///s2i/bin/"
 
 RUN apk --update  --repository http://dl-4.alpinelinux.org/alpine/edge/community add \
     bash \
@@ -42,4 +42,5 @@ RUN mkdir -p $CONDA_DIR && \
     $CONDA_DIR/bin/conda install --yes theano pygpu keras && \
     $CONDA_DIR/bin/pip install Flask
 
-
+RUN mkdir /s2i
+COPY  s2i /s2i
