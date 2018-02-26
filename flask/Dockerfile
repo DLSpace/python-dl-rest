@@ -1,29 +1,17 @@
-FROM alpine:latest
+FROM ubuntu:latest
 
 LABEL author="sreedhar potturi <sreedhar.potturi@gmail.com>" io.openshift.s2i.scripts-url="image:///s2i/bin/"
 
-RUN apk --update  --repository http://dl-4.alpinelinux.org/alpine/edge/community add \
+RUN apt-get -q update
+RUN apt-get -y install \
     bash \
     git \
     curl \
     ca-certificates \
     bzip2 \
     unzip \
-    sudo \
-    libstdc++ \
-    glib \
-    libxext \
-    libxrender \
-    tini \ 
     python-dev \ 
-    g++ \ 
-    && curl -L "https://github.com/andyshinn/alpine-pkg-glibc/releases/download/2.25-r0/glibc-2.25-r0.apk" -o /tmp/glibc.apk \
-    && curl -L "https://github.com/andyshinn/alpine-pkg-glibc/releases/download/2.25-r0/glibc-bin-2.25-r0.apk" -o /tmp/glibc-bin.apk \
-    && curl -L "https://github.com/andyshinn/alpine-pkg-glibc/releases/download/2.25-r0/glibc-i18n-2.25-r0.apk" -o /tmp/glibc-i18n.apk \
-    && apk add --allow-untrusted /tmp/glibc*.apk \
-    && /usr/glibc-compat/sbin/ldconfig /lib /usr/glibc-compat/lib \
-    && /usr/glibc-compat/bin/localedef -i en_US -f UTF-8 en_US.UTF-8 \
-    && rm -rf /tmp/glibc*apk /var/cache/apk/*
+    g++
 
 # Configure environment
 ENV CONDA_DIR=/opt/conda CONDA_VER=4.3.14
